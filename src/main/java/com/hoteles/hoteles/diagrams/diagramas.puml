@@ -1,0 +1,19 @@
+@startuml
+
+class HotelModel {
+    - Long id
+    - String name
+    - String description
+    - List<RatingModel> ratings
+}
+
+class RatingModel {
+    - Long id
+    - int value
+    - HotelModel hotel
+    - String comment
+}
+
+HotelModel "1" --> "0..*" RatingModel : ratings
+
+@enduml
